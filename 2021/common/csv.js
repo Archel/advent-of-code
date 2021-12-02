@@ -1,11 +1,13 @@
 const csv = require('csv');
 const fs = require('fs');
 
-const readCsvFile = (fileName, mapper = (row) => row) => {
+const readCsvFile = (fileName, mapper = (row) => row, delimiter) => {
     return new Promise((resolve, reject) => {
         const rows = [];
         fs.createReadStream(fileName)
-            .pipe(csv.parse())
+            .pipe(csv.parse({
+                delimiter
+            }))
             .on('data', (row) => {
                 rows.push(mapper(row))
             })
