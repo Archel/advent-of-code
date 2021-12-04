@@ -6,12 +6,12 @@ const readCsvFile = (fileName, mapper = (row) => row, delimiter) => {
         const rows = [];
         fs.createReadStream(fileName)
             .pipe(csv.parse({
-                delimiter
+                delimiter: delimiter
             }))
             .on('data', (row) => {
                 rows.push(mapper(row))
             })
-            .on('error', () => reject())
+            .on('error', (err) => reject(err))
             .on('end', () => resolve(rows));
     });
 }
