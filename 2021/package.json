@@ -9,6 +9,7 @@
     "day3": "node ./day3/day3.js",
     "day4": "node ./day4/day4.js",
     "day5": "node ./day5/day5.js",
+    "day6": "node ./day6/day6.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
