@@ -1,6 +1,5 @@
 const { readCsvFile } = require('../common/csv');
 const path = require('path');
-const util = require('util')
 
 class BingoCard {
     constructor(card) {
